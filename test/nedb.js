@@ -66,6 +66,25 @@ describe('Specific tests', function() {
         }).to.not.throw()
     })
 
+    it('should allow proper instantiation with second arguments as string', function () {
+        function newTokenStoreFactory() {
+            return new NedbStore(db, 'whats up bruh')
+        }
+
+        expect(function() { 
+            newTokenStoreFactory()
+        }).to.not.throw()
+    })
+
+    it('should not allow the instantiation with second arguments not as string', function () {
+        function newTokenStoreFactory() {
+            return new NedbStore(db, 123)
+        }
+
+        expect(function() { 
+            newTokenStoreFactory()
+        }).to.throw(Error)
+    })
 
     it('should default to "passwordless-token" as documents name', function(done) {
         var store = TokenStoreFactory()

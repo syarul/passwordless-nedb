@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/syarul/passwordless-nedb.svg)](https://travis-ci.org/syarul/passwordless-nedb) [![Coverage Status](https://coveralls.io/repos/syarul/passwordless-nedb/badge.svg?branch=master&service=github)](https://coveralls.io/github/syarul/passwordless-nedb?branch=master)
 
-This is NeDB token storage module for [Passwordless](https://github.com/florianheinemann/passwordless), a node.js module for express that allows website authentication without password using verification through email or other means. Visit the project's website https://passwordless.net for more details. With NeDB you can store token on your server without the need to run another instance of database like Mongo, CouchDB, etc.
+This is [NeDB](https://github.com/louischatriot/nedb) token storage module for [Passwordless](https://github.com/florianheinemann/passwordless), a node.js module for express that allows website authentication without password using verification through email or other means. Visit the project's website https://passwordless.net for more details. With NeDB you can store token on your server without the need to run another instance of database like Mongo, CouchDB, etc.
 
 Tokens are stored in a NeDB database and are hashed and salted using [bcrypt](https://github.com/ncb000gt/node.bcrypt.js/). 
 
@@ -35,9 +35,10 @@ var NedbStore = require('passwordless-nedb')
 var Datastore = require('nedb')
 var db = new Datastore({ filename: 'path/to/token.json'})
 
-new NedbStore(db);
+new NedbStore(db, 'my-password-tokens');
 ```
 * **db:** *(object)* the data storage declared upon creation/loading as defined by the NeDB specification. Please check the documentation for details: at [https://github.com/louischatriot/nedb](https://github.com/louischatriot/nedb)
+* **'my-password-tokens':** *(string, optional)* A valid string identifier. All created documents within database has value { _lib: passwordless-token } as the default reference, this will override the default name. Usefull for easy indexing and search when you want to integrate the database with other documents as well.
 
 Example:
 ```javascript
@@ -48,8 +49,13 @@ passwordless.init(new NedbStore(db))
 As the tokens are equivalent to passwords (even though they do have the security advantage of only being valid for a limited time) they have to be protected in the same way. passwordless-nedb uses [bcrypt](https://github.com/ncb000gt/node.bcrypt.js/) with automatically created random salts. To generate the salt 10 rounds are used.
 
 ## Tests
+```
+gulp
+```
+## Change Logs
 
-`$ npm test`
+v 0.0.1 - initial commit
+v 0.0.2 - add second string arguments to allow changing '_lib' property of created tokens 
 
 ## License
 

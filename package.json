@@ -31,10 +31,10 @@
   "homepage": "https://github.com/syarul/passwordless-nedb#readme",
   "dependencies": {
     "bcrypt": "^0.8.5",
-    "nedb": "^1.2.0",
     "passwordless-tokenstore": "0.0.10"
   },
   "devDependencies": {
+    "nedb": "^1.2.0",
     "chai": "^3.2.0",
     "chance": "^0.7.7",
     "coveralls": "^2.11.4",

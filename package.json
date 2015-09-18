@@ -1,6 +1,6 @@
 {
   "name": "passwordless-nedb",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "NeDB token storage for passwordless",
   "main": "index.js",
   "scripts": {

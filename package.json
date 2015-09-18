@@ -1,6 +1,6 @@
 {
   "name": "passwordless-nedb",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "NeDB token storage for passwordless",
   "main": "index.js",
   "scripts": {
@@ -11,15 +11,17 @@
     "url": "git+https://github.com/syarul/passwordless-nedb.git"
   },
   "keywords": [
+    "forget password",
     "nedb",
     "passwordless",
     "bcrypt",
-    "token",
+    "token auth",
     "authentication",
     "anti-password",
-    "token",
-    "base",
-    "authorization"
+    "token authorization",
+    "password no more",
+    "authorization",
+    "secure auth"
   ],
   "author": "Shahrul Nizam Selamat",
   "license": "MIT",

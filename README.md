@@ -54,9 +54,9 @@ gulp
 ```
 ## Change Logs
 
-v 0.0.1 - initial commit
-
-v 0.0.2 - add second string arguments to allow changing '_lib' property of created tokens 
+- v0.0.1 initial commit
+- v0.0.2 add second string arguments to allow changing '_lib' property of created tokens
+- v0.0.3 minor fix
 
 ## License
 

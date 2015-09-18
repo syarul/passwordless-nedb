@@ -2,3 +2,4 @@ node_modules
 coverage
 db.json
 .npmignore
+npm-debug.log
